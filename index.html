@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114845129-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-114845129-2');
+    </script>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Triad | Welcome</title>
+
+    <meta name="description" content="The Triad: a developreneur with awesome and creative ideas ready to be developed and put out there... Fullstack Web Developer, Graphics Designer, Web Design">
+
+    <meta name="keywords" content="The Triad, The tech triad, tech, triad, web development, web design, graphic design">
+
+    <meta name="og:title" content="The Triad | Welcome" />
+
+    <meta name="og:description" content="The Triad: a developreneur with awesome and creative ideas ready to be developed and put out there... Fullstack Web Developer, Graphics Designer, Web Design">
+
+    <!-- <meta name="keywords" content="The Triad, The tech triad, tech, triad, web development, web design, graphic design"> -->
+
+
+    <link rel="stylesheet" href="Assets/animate.css">
+
+    <link rel="stylesheet" href="Assets/index.css">
+
+    <script src="Assets/jquery-3.2.1.min.js"></script>
+
+    <script>
+        $(window).on('load', () => {
+            $('.loading').css('transition', '1s all ease').css('opacity', '0')
+            $('body').css('background-color', 'unset')
+            $('.container').addClass('loaded')
+
+            // $('#portfolio').on('click', (event) => {
+            //     event.preventDefault()
+
+            // })
+
+            setTimeout(() => {
+                $('.redirect').addClass('active')
+
+                // $('.redirect p').append('3s')
+
+                setTimeout(() => {
+                    console.log($('#portfolio'))
+                    $('#portfolio-click')[0].click()
+                        // $('#portfolio')[0].trigger('click');
+                }, 3000);
+            }, 2000);
+
+        })
+    </script>
+</head>
+
+<body>
+
+    <div class="loading" style="margin-top: 20px;">
+        Getting things ready...
+    </div>
+    <div class="container">
+        <h1>
+            <span class="animated slideInUp">THE TRIAD</span>
+        </h1>
+
+        <p class="animated fadeInUp">
+            WELCOME
+        </p>
+
+        <div class="bottom-links sanimated fadeInUp">
+            <ul>
+                <li class="animated fadeInLeft" disabled>
+                    <a id="portfolio" shref="http://portfolio.thetriad.tech" title="Josemaria's Portfolio" disabled>My Portfolio</a>
+                </li>
+                <li> &VerticalLine; </li>
+                <li class="animated fadeInRight">
+                    <a id="website" href="#http://jack.thetriad.tech" title="Josemaria's Personal Website">Personal Website</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="redirect animated fadeInDown" style="margin-top: 20px;">
+        You will be redirected to my portfolio shortly <br>
+        <span style="color: grey">best viewed on desktops and tabs</span>
+        <p>
+            <a id="portfolio-click" href="http://portfolio.thetriad.tech"></a>
+        </p>
+    </div>
+
+</body>
+
+</html>

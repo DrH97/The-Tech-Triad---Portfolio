@@ -1,0 +1,10 @@
+#FF0077 - Hot Pink
+#0071DB - Bubble Blue
+#2A2A99 - Dark Blue
+#EBEBEB - Light Grey
+#FF0090 - Lighter Pink
+#0791F4 - Calm Blue
+#D7D7D7 - Slightly Darker Lighter Grey
+#FFC800 - Yellorange
+#FFD91B - Lighterange
+#FAB800 - Darkerange

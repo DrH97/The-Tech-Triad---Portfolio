@@ -1,0 +1,259 @@
+<div class="nav">
+        <div class="nav-image">
+            <div class="img-holder">
+                <img src="Untitled-8-512.png" />
+            </div>
+        </div>
+        <div class="nav-title">
+            About Me
+        </div>
+        <div class="tag">
+            Creative Designer<br>
+            <j style="color:black;">&amp;</j> Aspiring Actor
+        </div>
+        <div class="menu-dropdown">
+            <img src="menu.png" height="100%" />
+        </div>
+        <div class="menu ">
+            <ul>
+                <a href="#aboutme">
+                    <li class="active">
+                        About Me
+                    </li>
+                </a>
+                <a href="#skills">
+                    <li>
+                        Skills
+                    </li>
+                </a>
+                <a href="#showcase">
+                    <li>
+                        Showcase
+                    </li>
+                </a>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="section section__about active">
+
+         <div class="content"> 
+        <div class="left ">
+            <p class="lefttext">ABOUT ME</p>
+        </div>
+        <div class="main ">
+            Masndaisjdnkja iasj ndija sid ais diahs d as d a sdoa s d
+        </div>
+        <div class="right">
+            <div class="contact-card">
+                Website
+            </div>
+            <div class="contact-card">
+                Phone
+            </div>
+            <div class="contact-card">
+                Email
+            </div>
+        </div>
+         </div> 
+    </div>
+
+ 	<div class=" section section__skills" style="margin-top: 100vh;" >
+
+        <div class="content ">
+            <div class="left ">
+				<p class="lefttext">SKILLS</p>
+            </div>
+            <div class="main">
+                asdnmaskmdlkas kals dka sd askd
+            </div>
+            <div class="right">
+                <div class="contact-card">
+                    Website
+                </div>
+                <div class="contact-card">
+                    Phone
+                </div>
+                <div class="contact-card">
+                    Email
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<div class=" section section__showcase">
+
+        <div class="content ">
+            <div class="left">
+				<p class="lefttext">SHOWCASE</p>
+            </div>
+            <div class="main">
+                asdnmaskmdlkas kals dka sd askd
+            </div>
+            <div class="right">
+                <div class="contact-card">
+                    Website
+                </div>
+                <div class="contact-card">
+                    Phone
+                </div>
+                <div class="contact-card">
+                    Email
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<style>
+	* {
+		padding: 0;
+		margin: 0;
+		text-decoration-style: none;
+		text-decoration-line: none;
+		list-style-type: none;
+		box-sizing: border-box;
+		font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+	}
+
+	.nav {
+		height: 75px;
+		background: #EBEBEB;
+		z-index: 0;
+	}
+
+	.nav-title {
+		text-align: center;
+		font-size: 3em;
+		z-index: 1;
+		background: #EBEBEB;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #0791F4;
+		min-width: 320px;
+	}
+
+	.nav-image {
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		z-index: 1;
+		width: 150px;
+		height: 150px;
+		/* text-align: center; */
+		background: #EBEBEB;
+		border-radius: 50%;
+	}
+
+	.img-holder {
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		width: 130px;
+		height: 130px;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+
+	.nav-image img {
+		width: 100%;
+	}
+
+	.tag {
+		position: absolute;
+		left: 50%;
+		top: 150px;
+		transform: translateX(-50%);
+		color: #0791F4;
+	}
+
+	.menu-dropdown {
+		float: right;
+		text-align: center;
+		width: 240px;
+		height: 50%;
+		margin-top: 15px;
+	}
+
+	.menu-dropdown:hover {
+		cursor: pointer;
+	}
+
+	.menu-dropdown.active {
+		transform: rotate(180deg);
+		transition: 4s all cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	}
+
+	.menu.active {
+		display: block;
+	}
+
+	.menu {
+		/* display: none; */
+		position: absolute;
+		background: #EBEBEB;
+		width: 140px;
+		right: 118px;
+		top: 75px;
+		z-index: 3;
+		box-shadow: 0px 2px 3px 0px #00000077;
+	}
+
+	.menu li {
+		width: 100%;
+		padding: 7px;
+		text-align: center;
+		color: #FF0077;
+	}
+
+	.menu li:hover {
+		background: #FF007722;
+	}
+
+	.menu li.active {
+		background: #FF0077;
+		color: black;
+	}
+	
+	
+	.section {
+		display: none;
+		width: 100vw;
+		height: calc(100vh - 75px);
+		overflow: hidden;
+		position: fixed;
+	}
+	
+	.section.active {
+		display: block;
+	}
+	
+	.main {
+		float: left;
+		width: calc(100vw - 236px);
+		height: 100%;
+		overflow: auto;
+	}
+	
+	.left, .right {
+		width: 118px;
+		float: left;
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	.lefttext {
+		font-size: 100px;
+		transform-origin: left;
+		transform: rotate(-90deg);
+		width: calc(100vw - 75px);
+		position: relative;
+		top: 155%;
+		left: 60px;
+		text-align: center;
+	}
+</style>
+

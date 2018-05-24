@@ -1,0 +1,21 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Jack's Portfolio",
+  "main": "server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Jack's",
+    "portfolio",
+    "Josemaria",
+    "Nabangi",
+    "Dr",
+    "H",
+    "jack",
+    "designs"
+  ],
+  "author": "Dr H",
+  "license": "ISC"
+}

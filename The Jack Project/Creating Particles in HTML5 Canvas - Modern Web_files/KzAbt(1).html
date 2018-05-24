@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://s.codepen.io/donovanh/fullembedgrid/KzAbt?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Canvas example 4</title>
+  
+  
+  
+  
+      <style>
+      body {
+  margin: 0;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  
+    <script src="./stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js.download"></script>
+
+  
+  
+
+    <script>
+      /*
+      Example 4: Bouncing
+    */
+    window.onload = function() {
+
+      // Initialise an empty canvas and place it on the page
+      var canvas = document.createElement("canvas");
+      var context = canvas.getContext("2d");
+      canvas.width = 800;
+      canvas.height = 380;
+      document.body.appendChild(canvas);
+
+      // Inital starting position
+      var posX = 20,
+          posY = canvas.height / 2;
+
+      // Initial velocities
+      var vx = 10,
+          vy = -10,
+          gravity = 1;
+
+      // Draw shapes on the canvas
+      setInterval(function() {
+        // Erase canvas
+        context.fillStyle = "black";
+        context.fillRect(0,0,canvas.width, canvas.height);
+        posX += vx;
+        posY += vy;
+        vy += gravity;
+
+        // Draw a circle particle on the canvas
+        context.beginPath();
+        context.fillStyle = "white";
+        // After setting the fill style, draw an arc on the canvas
+        context.arc(posX, posY, 10, 0, Math.PI*2, true); 
+        context.closePath();
+        context.fill();
+        
+      }, 30);
+
+
+    };
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+
+
+
+ <canvas width="800" height="380"></canvas></body></html>

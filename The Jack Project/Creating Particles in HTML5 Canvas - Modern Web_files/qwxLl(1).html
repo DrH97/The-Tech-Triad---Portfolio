@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0075)https://s.codepen.io/donovanh/fullembedgrid/qwxLl?type=embed&animations=run -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Canvas example 5</title>
+  
+  
+  
+  
+      <style>
+      body {
+  margin: 0;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no">
+
+  
+    <script src="./stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js.download"></script>
+
+  
+  
+
+    <script>
+      /*
+      Example 5: Generating a load of random particles (with gravity)
+    */
+    window.onload = function() {
+
+      // Initialise an empty canvas and place it on the page
+      var canvas = document.createElement("canvas");
+      var context = canvas.getContext("2d");
+      canvas.width = 800;
+      canvas.height = 380;
+      document.body.appendChild(canvas);
+
+      // Inital starting position
+      var posX = 20,
+          posY = canvas.height / 2;
+
+      // No longer setting velocites as they will be random
+      // Set up object to contain particles and set some default values
+      var particles = {},
+          particleIndex = 0,
+          settings = {
+            density: 20,
+            particleSize: 10,
+            startingX: canvas.width / 2,
+            startingY: canvas.height / 4,
+            gravity: 0.5
+          };
+
+      // Set up a function to create multiple particles
+      function Particle() {
+        // Establish starting positions and velocities
+        this.x = settings.startingX;
+        this.y = settings.startingY;
+
+        // Determine original X-axis speed based on setting limitation
+        this.vx = Math.random() * 20 - 10;
+        this.vy = Math.random() * 20 - 5;
+
+        // Add new particle to the index
+        // Object used as it's simpler to manage that an array
+        particleIndex ++;
+        particles[particleIndex] = this;
+        this.id = particleIndex;
+        this.life = 0;
+        this.maxLife = 100;
+      }
+
+      // Some prototype methods for the particle's "draw" function
+      Particle.prototype.draw = function() {
+        this.x += this.vx;
+        this.y += this.vy;
+
+        // Adjust for gravity
+        this.vy += settings.gravity;
+
+        // Age the particle
+        this.life++;
+
+        // If Particle is old, it goes in the chamber for renewal
+        if (this.life >= this.maxLife) {
+          delete particles[this.id];
+        }
+
+        // Create the shapes
+        context.clearRect(settings.leftWall, settings.groundLevel, canvas.width, canvas.height);
+        context.beginPath();
+        context.fillStyle="#ffffff";
+        // Draws a circle of radius 20 at the coordinates 100,100 on the canvas
+        context.arc(this.x, this.y, settings.particleSize, 0, Math.PI*2, true); 
+        context.closePath();
+        context.fill();
+
+      }
+
+      setInterval(function() {
+        context.fillStyle = "rgba(10,10,10,0.8)";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the particles
+        for (var i = 0; i < settings.density; i++) {
+          if (Math.random() > 0.97) {
+            // Introducing a random chance of creating a particle
+            // corresponding to an chance of 1 per second,
+            // per "density" value
+            new Particle();
+          }
+        }
+
+        for (var i in particles) {
+          particles[i].draw();
+        }
+      }, 30);
+    };
+      //# sourceURL=pen.js
+    </script>
+
+
+
+  
+  
+
+
+
+
+ <canvas width="800" height="380"></canvas></body></html>
