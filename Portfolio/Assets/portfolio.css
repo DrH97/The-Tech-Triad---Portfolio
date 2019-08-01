@@ -480,7 +480,7 @@ blue {
     width: calc(100% - 40px);
     float: left;
     /* overflow: auto; */
-    height: 200px;
+    height: 225px;
     background: url("Media/spinner.gif") 50% 50% no-repeat;
 }
 
@@ -490,7 +490,7 @@ blue {
 
 .badge {
     width: 150px;
-    height: 200px;
+    height: 220px;
     padding: 5px;
     border: 1px solid #dFdfdFa7;
     margin: 10px 20px;
